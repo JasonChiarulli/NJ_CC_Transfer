@@ -1,0 +1,21 @@
+{% extends "personal/header.html" %}
+
+{% block content %}
+		<!--<li>{{ courses.credits }} <a href="/NJCCData/{{ courses.id }}/"> {{ courses.equivalent_course }}</a></li>-->
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Credits</th>
+				<th>Courses</th>
+			</tr>
+		</thead>
+	{% for courses in all_courses %}
+		<tbody>
+			<tr>
+				<td>{{ courses.credits }}</td>
+				<td><a href="/NJCCData/{{ courses.id }}/"> {{ courses.equivalent_course }}</a></td>
+			</tr>
+		</tbody>
+	</table>
+	{% endfor %}
+{% endblock %}
